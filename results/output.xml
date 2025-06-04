@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.3 on darwin)" generated="2025-06-04T19:37:20.722919" rpa="false" schemaversion="5">
+<suite id="s1" name="Adit-Triyadi-Lion-Parcel" source="/Users/adittriyadi/Documents/adit-triyadi-lion-parcel">
+<suite id="s1-s1" name="Assignment-1-2-4" source="/Users/adittriyadi/Documents/adit-triyadi-lion-parcel/Assignment-1-2-4">
+<suite id="s1-s1-s1" name="Web" source="/Users/adittriyadi/Documents/adit-triyadi-lion-parcel/Assignment-1-2-4/web">
+<suite id="s1-s1-s1-s1" name="TestCase" source="/Users/adittriyadi/Documents/adit-triyadi-lion-parcel/Assignment-1-2-4/web/TestCase">
+<suite id="s1-s1-s1-s1-s1" name="Checkout" source="/Users/adittriyadi/Documents/adit-triyadi-lion-parcel/Assignment-1-2-4/web/TestCase/Checkout.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Verify user successfully checkout a product on saucedemo.com" line="5">
+<kw name="Given User go to saucedemo website" owner="BrowserPage">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-04T19:37:20.814896" level="INFO">${chrome_option} = &lt;selenium.webdriver.chrome.options.Options object at 0x102c56120&gt;</msg>
+<var>${chrome_option}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-04T19:37:20.814606" elapsed="0.000381"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_option}</arg>
+<arg>add_argument</arg>
+<arg>--guest</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-06-04T19:37:20.815130" elapsed="0.000162"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:20.815668" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=${chrome_option}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-04T19:37:20.815418" elapsed="1.849842"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-04T19:37:22.665898" elapsed="0.359731"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<status status="PASS" start="2025-06-04T19:37:20.813040" elapsed="2.212774"/>
+</kw>
+<kw name="And User input username on login page" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.029382" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>${textfield_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.028872" elapsed="0.109385"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-06-04T19:37:23.027354" elapsed="0.111049"/>
+</kw>
+<kw name="And User input password on login page" owner="LoginPage">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.141172" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2025-06-04T19:37:23.158103" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${textfield_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.140993" elapsed="0.041723"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-04T19:37:23.139703" elapsed="0.043155"/>
+</kw>
+<kw name="And User click login button on login page" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.185660" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${button_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.185497" elapsed="0.058805"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.184291" elapsed="0.060179"/>
+</kw>
+<kw name="And User click add to cart button for item Sauce Labs Backpack on inventory page" owner="InventoryPage" source_name="User click add to cart button for item ${item_name} on inventory page">
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-06-04T19:37:23.247713" level="INFO">${item_name_lower_case} = sauce labs backpack</msg>
+<var>${item_name_lower_case}</var>
+<arg>${item_name}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.247525" elapsed="0.000271"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-06-04T19:37:23.248027" level="INFO">${item_name_lower_case} = sauce-labs-backpack</msg>
+<var>${item_name_lower_case}</var>
+<arg>${item_name_lower_case}</arg>
+<arg>${SPACE}</arg>
+<arg>-</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.247895" elapsed="0.000173"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-06-04T19:37:23.248279" level="INFO">${locator} = id=add-to-cart-sauce-labs-backpack</msg>
+<var>${locator}</var>
+<arg>${button_add_to_cart}</arg>
+<arg>{item_name}</arg>
+<arg>${item_name_lower_case}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.248155" elapsed="0.000160"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.248410" elapsed="0.013895"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.262617" elapsed="0.012231"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.275271" level="INFO">Clicking element 'id=add-to-cart-sauce-labs-backpack'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.275042" elapsed="0.025691"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.245906" elapsed="0.054952"/>
+</kw>
+<kw name="And User click shopping bag button on inventory page" owner="InventoryPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${button_shopping_bag}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.302609" elapsed="0.010006"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${button_shopping_bag}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.312792" elapsed="0.010461"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.323652" level="INFO">Clicking element 'css=a[data-test="shopping-cart-link"]'.</msg>
+<arg>${button_shopping_bag}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.323432" elapsed="0.028651"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.301777" elapsed="0.050436"/>
+</kw>
+<kw name="And User see item Sauce Labs Backpack with qty 1 and price $29.99 on cart page" owner="CartPage" source_name="User see item ${item_name} with qty ${qty} and price ${price} on cart page">
+<kw name="Replace String" owner="String">
+<msg time="2025-06-04T19:37:23.354271" level="INFO">${item_name_locator} = xpath=//div[@class="cart_item" and .//div[@data-test="inventory-item-name"][text()="Sauce Labs Backpack"]]//div[@data-test="inventory-item-name"]</msg>
+<var>${item_name_locator}</var>
+<arg>${label_item_name}</arg>
+<arg>{item_name}</arg>
+<arg>${item_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.354076" elapsed="0.000272"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-06-04T19:37:23.354856" level="INFO">${item_qty_locator} = xpath=//div[@class="cart_item" and .//div[@data-test="inventory-item-name"][text()="Sauce Labs Backpack"]]//div[@data-test="item-quantity"]</msg>
+<var>${item_qty_locator}</var>
+<arg>${label_item_quantity}</arg>
+<arg>{item_name}</arg>
+<arg>${item_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.354588" elapsed="0.000436"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-06-04T19:37:23.355465" level="INFO">${item_price_locator} = xpath=//div[@class="cart_item" and .//div[@data-test="inventory-item-name"][text()="Sauce Labs Backpack"]]//div[@data-test="inventory-item-price"]</msg>
+<var>${item_price_locator}</var>
+<arg>${label_item_price}</arg>
+<arg>{item_name}</arg>
+<arg>${item_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.355168" elapsed="0.000384"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.370026" level="INFO">${actual_item_name} = Sauce Labs Backpack</msg>
+<var>${actual_item_name}</var>
+<arg>${item_name_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.355701" elapsed="0.014431"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.379615" level="INFO">${actual_item_qty} = 1</msg>
+<var>${actual_item_qty}</var>
+<arg>${item_qty_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.370311" elapsed="0.009392"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.388369" level="INFO">${actual_item_price} = $29.99</msg>
+<var>${actual_item_price}</var>
+<arg>${item_price_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.379876" elapsed="0.008568"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_item_name}</arg>
+<arg>${item_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.388597" elapsed="0.000221"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_item_qty}</arg>
+<arg>${qty}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.388910" elapsed="0.000119"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_item_price}</arg>
+<arg>${price}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.389113" elapsed="0.000110"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.353142" elapsed="0.036138"/>
+</kw>
+<kw name="And User click checkout button on cart page" owner="CartPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.391703" level="INFO">Clicking button 'id=checkout'.</msg>
+<arg>${button_checkout}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.391576" elapsed="0.039307"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.390549" elapsed="0.040572"/>
+</kw>
+<kw name="And User input first name on checkout page" owner="CheckoutPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.433578" level="INFO">Typing text 'Lion' into text field 'id=first-name'.</msg>
+<arg>${textfield_first_name}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.433420" elapsed="0.040201"/>
+</kw>
+<arg>${first_name}</arg>
+<status status="PASS" start="2025-06-04T19:37:23.432280" elapsed="0.041480"/>
+</kw>
+<kw name="And User input last name on checkout page" owner="CheckoutPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.476323" level="INFO">Typing text 'Parcel' into text field 'id=last-name'.</msg>
+<arg>${textfield_last_name}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.476157" elapsed="0.036340"/>
+</kw>
+<arg>${last_name}</arg>
+<status status="PASS" start="2025-06-04T19:37:23.474942" elapsed="0.037763"/>
+</kw>
+<kw name="And User input postal code on checkout page" owner="CheckoutPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.515217" level="INFO">Typing text '11530' into text field 'id=postal-code'.</msg>
+<arg>${textfield_postal_code}</arg>
+<arg>${postal_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.515058" elapsed="0.036341"/>
+</kw>
+<arg>${postal_code}</arg>
+<status status="PASS" start="2025-06-04T19:37:23.513885" elapsed="0.037651"/>
+</kw>
+<kw name="And User click continue button on checkout page" owner="CheckoutPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.553874" level="INFO">Clicking button 'id=continue'.</msg>
+<arg>${button_continue}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.553710" elapsed="0.053179"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.552645" elapsed="0.054379"/>
+</kw>
+<kw name="And User see item Sauce Labs Backpack with qty 1 and price $29.99 on checkout page" owner="CheckoutPage" source_name="User see item ${item_name} with qty ${qty} and price ${price} on checkout page">
+<kw name="Replace String" owner="String">
+<msg time="2025-06-04T19:37:23.609296" level="INFO">${item_name_locator} = xpath=//div[@class="cart_item" and .//div[@data-test="inventory-item-name"][text()="Sauce Labs Backpack"]]//div[@data-test="inventory-item-name"]</msg>
+<var>${item_name_locator}</var>
+<arg>${label_item_name}</arg>
+<arg>{item_name}</arg>
+<arg>${item_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.609149" elapsed="0.000218"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-06-04T19:37:23.609579" level="INFO">${item_qty_locator} = xpath=//div[@class="cart_item" and .//div[@data-test="inventory-item-name"][text()="Sauce Labs Backpack"]]//div[@data-test="item-quantity"]</msg>
+<var>${item_qty_locator}</var>
+<arg>${label_item_quantity}</arg>
+<arg>{item_name}</arg>
+<arg>${item_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.609458" elapsed="0.000160"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-06-04T19:37:23.609823" level="INFO">${item_price_locator} = xpath=//div[@class="cart_item" and .//div[@data-test="inventory-item-name"][text()="Sauce Labs Backpack"]]//div[@data-test="inventory-item-price"]</msg>
+<var>${item_price_locator}</var>
+<arg>${label_item_price}</arg>
+<arg>{item_name}</arg>
+<arg>${item_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.609709" elapsed="0.000163"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.619764" level="INFO">${actual_item_name} = Sauce Labs Backpack</msg>
+<var>${actual_item_name}</var>
+<arg>${item_name_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.609958" elapsed="0.009900"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.626945" level="INFO">${actual_item_qty} = 1</msg>
+<var>${actual_item_qty}</var>
+<arg>${item_qty_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.620020" elapsed="0.007007"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.634564" level="INFO">${actual_item_price} = $29.99</msg>
+<var>${actual_item_price}</var>
+<arg>${item_price_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.627178" elapsed="0.007563"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_item_name}</arg>
+<arg>${item_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.634924" elapsed="0.000218"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_item_qty}</arg>
+<arg>${qty}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.635232" elapsed="0.000120"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_item_price}</arg>
+<arg>${price}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.635435" elapsed="0.000109"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.608202" elapsed="0.027400"/>
+</kw>
+<kw name="And User see payment information is SauceCard #31337 on checkout page" owner="CheckoutPage" source_name="User see payment information is ${payment_info} on checkout page">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.646413" level="INFO">${actual_payment_info} = SauceCard #31337</msg>
+<var>${actual_payment_info}</var>
+<arg>${label_payment_info}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.637512" elapsed="0.008987"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_payment_info}</arg>
+<arg>${payment_info}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.646644" elapsed="0.000178"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.636535" elapsed="0.010348"/>
+</kw>
+<kw name="And User see shipping information is Free Pony Express Delivery! on checkout page" owner="CheckoutPage" source_name="User see shipping information is ${shipping_info} on checkout page">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.658275" level="INFO">${actutal_shipping_info} = Free Pony Express Delivery!</msg>
+<var>${actutal_shipping_info}</var>
+<arg>${label_shipping_info}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.648932" elapsed="0.009438"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actutal_shipping_info}</arg>
+<arg>${shipping_info}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.658553" elapsed="0.000208"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.647871" elapsed="0.010954"/>
+</kw>
+<kw name="And User see price total information with item total $29.99 and tax $2.40 on checkout page" owner="CheckoutPage" source_name="User see price total information with item total ${item_total_price} and tax ${tax_price} on checkout page">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.669561" level="INFO">${item_total_price_text} = Item total: $29.99</msg>
+<var>${item_total_price_text}</var>
+<arg>${label_item_total_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.660710" elapsed="0.008928"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.678329" level="INFO">${tax_price_text} = Tax: $2.40</msg>
+<var>${tax_price_text}</var>
+<arg>${label_tax_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.669773" elapsed="0.008630"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-06-04T19:37:23.678711" level="INFO">${actual_item_total_price} = $29.99</msg>
+<var>${actual_item_total_price}</var>
+<arg>${item_total_price_text}</arg>
+<arg>Item total: $</arg>
+<arg>$</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.678539" elapsed="0.000211"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-06-04T19:37:23.678953" level="INFO">${actual_tax_price} = $2.40</msg>
+<var>${actual_tax_price}</var>
+<arg>${tax_price_text}</arg>
+<arg>Tax: $</arg>
+<arg>$</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.678841" elapsed="0.000147"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_item_total_price}</arg>
+<arg>${item_total_price}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.679102" elapsed="0.000283"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_tax_price}</arg>
+<arg>${tax_price}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.679509" elapsed="0.000363"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.659828" elapsed="0.020140"/>
+</kw>
+<kw name="And User see total is $32.39 on checkout page" owner="CheckoutPage" source_name="User see total is ${total_price} on checkout page">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.692080" level="INFO">${total_price_text} = Total: $32.39</msg>
+<var>${total_price_text}</var>
+<arg>${label_total_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.682615" elapsed="0.009567"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-06-04T19:37:23.692549" level="INFO">${actual_total_price} = $32.39</msg>
+<var>${actual_total_price}</var>
+<arg>${total_price_text}</arg>
+<arg>Total: $</arg>
+<arg>$</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.692356" elapsed="0.000234"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_total_price}</arg>
+<arg>${total_price}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.692693" elapsed="0.000140"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.681095" elapsed="0.011799"/>
+</kw>
+<kw name="When User click finish button on checkout page" owner="CheckoutPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.695559" level="INFO">Clicking button 'id=finish'.</msg>
+<arg>${button_finish}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.695384" elapsed="0.036095"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.694262" elapsed="0.037349"/>
+</kw>
+<kw name="Then User see success message Thank you for your order! on checkout page" owner="CheckoutPage" source_name="User see success message ${thankyou_message} on checkout page">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T19:37:23.743468" level="INFO">${label_thankyou_order_text} = Thank you for your order!</msg>
+<var>${label_thankyou_order_text}</var>
+<arg>${label_thankyou_order}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.733491" elapsed="0.010079"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${label_thankyou_order_text}</arg>
+<arg>${thankyou_message}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.743729" elapsed="0.000189"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.732604" elapsed="0.011381"/>
+</kw>
+<kw name="And User close the browser" owner="BrowserPage">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-04T19:37:23.746244" elapsed="0.081720"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:23.744900" elapsed="0.083200"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:37:20.812488" elapsed="3.017015"/>
+</test>
+<status status="PASS" start="2025-06-04T19:37:20.736013" elapsed="3.094032"/>
+</suite>
+<status status="PASS" start="2025-06-04T19:37:20.735381" elapsed="3.095380"/>
+</suite>
+<status status="PASS" start="2025-06-04T19:37:20.734717" elapsed="3.096640"/>
+</suite>
+<status status="PASS" start="2025-06-04T19:37:20.733929" elapsed="3.097848"/>
+</suite>
+<status status="PASS" start="2025-06-04T19:37:20.724980" elapsed="3.107290"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Adit-Triyadi-Lion-Parcel" id="s1" pass="1" fail="0" skip="0">Adit-Triyadi-Lion-Parcel</stat>
+<stat name="Assignment-1-2-4" id="s1-s1" pass="1" fail="0" skip="0">Adit-Triyadi-Lion-Parcel.Assignment-1-2-4</stat>
+<stat name="Web" id="s1-s1-s1" pass="1" fail="0" skip="0">Adit-Triyadi-Lion-Parcel.Assignment-1-2-4.Web</stat>
+<stat name="TestCase" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">Adit-Triyadi-Lion-Parcel.Assignment-1-2-4.Web.TestCase</stat>
+<stat name="Checkout" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">Adit-Triyadi-Lion-Parcel.Assignment-1-2-4.Web.TestCase.Checkout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
