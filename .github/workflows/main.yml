@@ -28,7 +28,7 @@ jobs:
         robot Assignment-1-2-4/web/TestCase/Checkout.robot
         
     - name: Upload Test Results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: robot-results
         path: |
