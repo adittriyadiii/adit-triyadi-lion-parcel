@@ -23,15 +23,6 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         
-    - name: Install ChromeDriver
-      uses: nanasess/setup-chromedriver@v2
-      
-    - name: Start ChromeDriver
-      run: |
-        export DISPLAY=:99
-        chromedriver --url-base=/wd/hub &
-        sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
-        
     - name: Run Robot Framework Tests
       run: |
         robot --variable BROWSER:headlesschrome Assignment-1-2-4/web/TestCase/Checkout.robot
