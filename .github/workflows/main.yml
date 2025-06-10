@@ -34,17 +34,17 @@ jobs:
     - name: Upload Test Results
       uses: actions/upload-artifact@v4
       with:
-        name: robot-results
+        name: test-results
         path: test-results/
         
-  download-results:
+  test-results:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Download Test Results
         uses: actions/download-artifact@v4
         with:
-          name: robot-results
+          name: test-results
           path: test-results
           
       - name: List Downloaded Files
