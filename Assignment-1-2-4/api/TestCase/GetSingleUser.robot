@@ -5,7 +5,7 @@ Library    Collections
 *** Variables ***
 ${base_url}    https://reqres.in
 ${id}          2
-${response}  ${EMPTY}
+${response}    ${EMPTY}
 
 *** Test Cases ***
 Verify user successfully get single user by api
@@ -30,6 +30,7 @@ User send GET request to get single user with id ${user_id}
 
 User should receive response with status code ${expected_status}
     Status Should Be    ${expected_status}    ${response}
+    Log Full Response Body
 
 User see response header should contain Content-Type ${expected_content_type}
     Dictionary Should Contain Item    ${response.headers}    Content-Type    ${expected_content_type}
@@ -56,5 +57,10 @@ User see response body should contain user avatar ${expected_avatar}
 
 User see response body should contain support information
     ${response_json}=    Set Variable    ${response.json()}
-    Should Be Equal As Strings    ${response_json['support']['url']}    https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral
+    Should Be Equal As Strings    ${response_json['support']['url']}     https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral
     Should Be Equal As Strings    ${response_json['support']['text']}    Tired of writing endless social media content? Let Content Caddy generate it for you.
+
+Log Full Response Body
+    ${response_json}=    Set Variable    ${response.json()}
+    ${formatted_json}=    Evaluate    json.dumps($response_json, indent=3)    json
+    Log To Console     ${formatted_json}

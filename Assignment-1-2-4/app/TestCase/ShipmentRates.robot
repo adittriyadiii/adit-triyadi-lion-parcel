@@ -43,7 +43,7 @@ User open chrome browser
 
 User go to website lion parcel
     Go To Url  ${url}
-    Wait Until Page Contains Element    ${button_homepage}    timeout=5s    # Wait for page to load completely
+    Wait Until Page Contains Element    ${button_homepage}    timeout=5s
     Handle Banner If Present
 
 Handle Banner If Present

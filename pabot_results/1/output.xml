@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.3 on darwin)" generated="2025-06-10T08:00:43.236667" rpa="false" schemaversion="5">
+<suite id="s1" name="Checkout" source="/Users/adittriyadi/Documents/adit-triyadi-lion-parcel/Assignment-1-2-4/web/TestCase/Checkout.robot">
+<test id="s1-t1" name="Verify yeah" line="28">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-10T08:00:43.310578" level="INFO">Opening browser 'chrome' to base url 'https://google.com'.</msg>
+<arg>https://google.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-10T08:00:43.310372" elapsed="1.856345"/>
+</kw>
+<tag>cihuyy</tag>
+<status status="PASS" start="2025-06-10T08:00:43.309722" elapsed="1.857317"/>
+</test>
+<status status="PASS" start="2025-06-10T08:00:43.243104" elapsed="1.927123"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">cihuyy</stat>
+</tag>
+<suite>
+<stat name="Checkout" id="s1" pass="1" fail="0" skip="0">Checkout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

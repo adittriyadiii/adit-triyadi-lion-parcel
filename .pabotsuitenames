@@ -1,0 +1,6 @@
+datasources:d3bf8500388bbf209869f802367ef37d603bc43a
+commandlineoptions:65f95c924ba97541f47949701c4e3c51192a5b43
+suitesfrom:no-suites-from-option
+file:efa15fb85d1ac5c276953da466bc228644a60ece
+--test Checkout.Verify user successfully checkout a product on saucedemo.com
+--test Checkout.Verify yeah
