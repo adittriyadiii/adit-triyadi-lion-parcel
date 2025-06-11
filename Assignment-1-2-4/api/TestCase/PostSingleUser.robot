@@ -32,6 +32,7 @@ User send POST request to create new user with name ${user_name} and job ${user_
 
 User should receive response with status code ${expected_status}
     Status Should Be    ${expected_status}    ${response}
+    Log Full Response Body
 
 User see response header should contain Content-Type ${expected_content_type}
     Dictionary Should Contain Item    ${response.headers}    Content-Type    ${expected_content_type}
@@ -54,3 +55,8 @@ User see response body should contain valid created at timestamp
     Dictionary Should Contain Key    ${response_json}    createdAt
     ${timestamp}=    Set Variable    ${response_json['createdAt']}
     Should Match Regexp    ${timestamp}    ^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$ 
+
+Log Full Response Body
+    ${response_json}=    Set Variable    ${response.json()}
+    ${formatted_json}=    Evaluate    json.dumps($response_json, indent=3)    json
+    Log To Console     ${formatted_json}
